@@ -1,6 +1,9 @@
 package service
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 var CompAsc = func(a, b int) int {
 	return a - b
@@ -16,9 +19,5 @@ func TestBubbleSort(t *testing.T) {
 			break
 		}
 	}
-	if !isAsc {
-		t.Errorf("Numbers are not sorted in asc order, %v", numbers)
-	} else {
-		t.Logf("Sorted asc success %v", numbers)
-	}
+	assert.Equal(t, isAsc, true, "Numbers should be sorted in ascending order")
 }

@@ -1,6 +1,9 @@
 package service
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestMergeSort(t *testing.T) {
 	numbers := []int{3, 1, 2, 4, 10, 9}
@@ -12,9 +15,5 @@ func TestMergeSort(t *testing.T) {
 			break
 		}
 	}
-	if !isAsc {
-		t.Errorf("Numbers are not sorted in asc order, %v", numbers)
-	} else {
-		t.Logf("Sorted asc success %v", numbers)
-	}
+	assert.Equal(t, isAsc, true, "Numbers should be sorted in ascending order")
 }
