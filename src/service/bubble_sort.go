@@ -1,5 +1,7 @@
 package service
 
+import "fmt"
+
 func BubbleSort(numbers []int, comp func(int, int) int) {
 	size := len(numbers)
 	for i := 0; i < size; i++ {
@@ -14,4 +16,9 @@ func BubbleSort(numbers []int, comp func(int, int) int) {
 			break
 		}
 	}
+}
+
+// go calls this only once, first time this file is used!
+func init() {
+	fmt.Println("I am inside bubble sort")
 }

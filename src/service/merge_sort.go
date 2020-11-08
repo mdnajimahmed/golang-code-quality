@@ -1,5 +1,7 @@
 package service
 
+import "fmt"
+
 func MergeSort(numbers []int, comp func(int, int) int) {
 	size := len(numbers)
 	recursiveSort(numbers, 0, size-1, comp)
@@ -45,4 +47,8 @@ func merge(numbers []int, st, mid, ed int, comp func(int, int) int) {
 		numbers[pos+i] = tmp[i]
 	}
 
+}
+
+func init() {
+	fmt.Println("I am inside merge sort")
 }
