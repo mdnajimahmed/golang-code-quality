@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/mandatorySuicide/golang-code-quality/src/util"
 	"github.com/stretchr/testify/assert"
+	"os"
 	"testing"
 	"time"
 )
@@ -12,6 +13,10 @@ var CompAsc = func(a, b int) int {
 	return a - b
 }
 
+func TestMain(m *testing.M) {
+	fmt.Print("WOW")
+	os.Exit(m.Run())
+}
 func TestBubbleSort(t *testing.T) {
 	numbers := []int{3, 2, 1}
 	BubbleSort(numbers, CompAsc)
@@ -29,7 +34,7 @@ func TestBubbleSortTimer(t *testing.T) {
 	numbers := util.MakeRandInt(1000)
 	timeoutChannel := make(chan bool, 1)
 	defer close(timeoutChannel)
-	millisecond := 300
+	millisecond := 700
 
 	go func() {
 		BubbleSort(numbers, CompAsc)
