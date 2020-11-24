@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/buger/jsonparser"
 	"github.com/mandatorySuicide/golang-code-quality/src/app"
-	"github.com/mandatorySuicide/golang-code-quality/src/util"
+	"github.com/mandatorySuicide/golang-code-quality/src/utility"
 	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
@@ -18,7 +18,7 @@ func TestPing(t *testing.T) {
 	defer resp.Body.Close()
 	assert.Nil(t, err, fmt.Sprintf("Error should be nil"))
 	assert.Equal(t, resp.StatusCode, 200, "Response code should be 200")
-	body := util.ReadHttpBody(resp.Body)
+	body := utility.ReadHttpBody(resp.Body)
 	// ***** without new line test fails, ironic!!! *****
 	fmt.Println(body)
 	// todo : I need to find a way to parse json and validate them easily

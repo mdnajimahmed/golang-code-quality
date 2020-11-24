@@ -2,7 +2,7 @@ package service
 
 import (
 	"fmt"
-	"github.com/mandatorySuicide/golang-code-quality/src/util"
+	"github.com/mandatorySuicide/golang-code-quality/src/utility"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"
@@ -31,7 +31,7 @@ func TestBubbleSort(t *testing.T) {
 }
 
 func TestBubbleSortTimer(t *testing.T) {
-	numbers := util.MakeRandInt(1000)
+	numbers := utility.MakeRandInt(1000)
 	timeoutChannel := make(chan bool, 1)
 	defer close(timeoutChannel)
 	millisecond := 700
