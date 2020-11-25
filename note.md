@@ -1,0 +1,1 @@
+go to cofig folder and type wire, in case you forget
