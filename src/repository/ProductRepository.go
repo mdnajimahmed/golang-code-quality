@@ -39,6 +39,6 @@ func (p *ProductRepository) FindAll() ([]*domain.Product, error) {
 		}
 		list = append(list, &result)
 	}
-	return list,nil
+	return list, nil
 
 }

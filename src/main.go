@@ -4,10 +4,16 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"github.com/mandatorySuicide/golang-code-quality/src/config"
+	"github.com/mandatorySuicide/golang-code-quality/src/langPractice"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"os"
 )
+
+type S struct {
+}
+type I interface {
+}
 
 func GetClient(ctx context.Context) *mongo.Client {
 	uri := os.Getenv("MONGO_CONNECTION_STRING")
@@ -27,6 +33,14 @@ func GetCollection(ctx context.Context, collection string) *mongo.Collection {
 }
 
 func main() {
+	langPractice.TestTag()
+	//langPractice.TestSort()
+	langPractice.ConcMain()
+	//oldMain()
+
+}
+
+func oldMain() {
 	ctx := context.Background()
 	//ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	//defer cancel()
@@ -42,7 +56,7 @@ func main() {
 	//fmt.Print(err)
 	//app.SetupServer().Run()
 
-	productAPI := config.InitProductAPI(ctx,*productCollection)
+	productAPI := config.InitProductAPI(ctx, *productCollection)
 	r := gin.Default()
 
 	r.GET("/products", productAPI.FindAll)
