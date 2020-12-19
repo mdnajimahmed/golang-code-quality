@@ -14,6 +14,14 @@ type Person struct {
 type myInt int
 
 func TestTag() {
+	ch := 'c'
+	hello := "構 構"
+	// need to use _,char
+	for char := range hello {
+		fmt.Printf("%c", char)
+	}
+	fmt.Printf("character %c %T\n", ch, ch)
+	fmt.Printf("character %c %T", hello[0], hello[0])
 	p := Person{"Najim", "Ahmed", "najim.ju@gmail.com"}
 	t := reflect.TypeOf(p)
 
