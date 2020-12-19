@@ -4,4 +4,5 @@ func ConcMain() {
 	//runWaitGroup()
 	//raceCondition()
 	channelWork()
+	testDataShareBetweenChannel()
 }
