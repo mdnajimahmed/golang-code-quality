@@ -1,15 +1,20 @@
-https://github.com/360EntSecGroup-Skylar/goreporter
-https://github.com/golang/lint
-https://github.com/mgechev/revive
-https://github.com/kisielk/errcheck
-https://github.com/securego/gosec
-https://github.com/dominikh/go-tools
-
-
+# Step 01:
+Go code quality check
 https://github.com/golangci/golangci-lint
+# Step 02:
+Go run test with coverage
+file_test.go files
 
-https://levelup.gitconnected.com/static-code-analysis-for-golang-5f24b555d227
+# Step 03:
+Go integration test with 
+src/test/mock folder tests with mock
 
-https://medium.com/@ulm0_/golang-multi-packages-test-coverage-with-gitlab-ci-a7b52b91ef34
+# Step 04:
+Go functional test with docker
 
-https://cyral.com/blog/security-as-code-implementing-lint-and-gosec/
+src/test/intig folder tests with mock
+
+# Step 05:
+Build the docker file
+
+# deploy to fargate/s3
